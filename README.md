@@ -13,8 +13,9 @@
 
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
-- **Production**: (To be deployed to Cloudflare Pages)
-- **GitHub**: (To be pushed)
+- **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://0b7e8d16.data-collectors-ltd.pages.dev
+- **GitHub**: (Ready to push)
 
 ## Completed Features
 1. ✅ Animated hero section with gradient background and floating SVG visualization
@@ -137,6 +138,8 @@ webapp/
 - [ ] Add multi-language support
 
 ## Status
-- **Platform**: Cloudflare Pages (ready to deploy)
+- **Platform**: Cloudflare Pages
 - **Local Status**: ✅ Active and running
+- **Production Status**: ✅ Deployed and live
 - **Last Updated**: 2024-12-07
+- **Cloudflare Project**: data-collectors-ltd
