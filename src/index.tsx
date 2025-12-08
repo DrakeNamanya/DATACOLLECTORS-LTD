@@ -253,8 +253,8 @@ app.get('/', (c) => {
             <!-- Animated Background -->
             <div class="contact-bg-animation">
                 <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-                    <!-- African Youth with Smartphone (Left Side) -->
-                    <g id="person-collecting-data" transform="translate(200, 400)">
+                    <!-- African Youth with Smartphone (Right Side) -->
+                    <g id="person-collecting-data" transform="translate(800, 400)">
                         <!-- Person Body -->
                         <ellipse cx="0" cy="60" rx="35" ry="45" fill="#8b5cf6" opacity="0.9"/>
                         
@@ -305,60 +305,60 @@ app.get('/', (c) => {
                     <g id="data-stream">
                         <!-- Particle 1 -->
                         <g class="data-particle-upload">
-                            <circle cx="270" cy="450" r="8" fill="#3b82f6" opacity="0.9"/>
-                            <circle cx="270" cy="450" r="4" fill="#fff" opacity="0.9"/>
+                            <circle cx="870" cy="450" r="8" fill="#3b82f6" opacity="0.9"/>
+                            <circle cx="870" cy="450" r="4" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 2 -->
                         <g class="data-particle-upload" style="animation-delay: 0.5s">
-                            <circle cx="280" cy="460" r="6" fill="#10b981" opacity="0.9"/>
-                            <circle cx="280" cy="460" r="3" fill="#fff" opacity="0.9"/>
+                            <circle cx="880" cy="460" r="6" fill="#10b981" opacity="0.9"/>
+                            <circle cx="880" cy="460" r="3" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 3 -->
                         <g class="data-particle-upload" style="animation-delay: 1s">
-                            <circle cx="260" cy="440" r="7" fill="#fbbf24" opacity="0.9"/>
-                            <circle cx="260" cy="440" r="3.5" fill="#fff" opacity="0.9"/>
+                            <circle cx="860" cy="440" r="7" fill="#fbbf24" opacity="0.9"/>
+                            <circle cx="860" cy="440" r="3.5" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 4 -->
                         <g class="data-particle-upload" style="animation-delay: 1.5s">
-                            <circle cx="275" cy="455" r="5" fill="#ef4444" opacity="0.9"/>
-                            <circle cx="275" cy="455" r="2.5" fill="#fff" opacity="0.9"/>
+                            <circle cx="875" cy="455" r="5" fill="#ef4444" opacity="0.9"/>
+                            <circle cx="875" cy="455" r="2.5" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 5 -->
                         <g class="data-particle-upload" style="animation-delay: 2s">
-                            <circle cx="285" cy="445" r="6" fill="#8b5cf6" opacity="0.9"/>
-                            <circle cx="285" cy="445" r="3" fill="#fff" opacity="0.9"/>
+                            <circle cx="885" cy="445" r="6" fill="#8b5cf6" opacity="0.9"/>
+                            <circle cx="885" cy="445" r="3" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 6 -->
                         <g class="data-particle-upload" style="animation-delay: 2.5s">
-                            <circle cx="265" cy="465" r="7" fill="#06b6d4" opacity="0.9"/>
-                            <circle cx="265" cy="465" r="3.5" fill="#fff" opacity="0.9"/>
+                            <circle cx="865" cy="465" r="7" fill="#06b6d4" opacity="0.9"/>
+                            <circle cx="865" cy="465" r="3.5" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 7 -->
                         <g class="data-particle-upload" style="animation-delay: 3s">
-                            <circle cx="272" cy="448" r="5" fill="#f97316" opacity="0.9"/>
-                            <circle cx="272" cy="448" r="2.5" fill="#fff" opacity="0.9"/>
+                            <circle cx="872" cy="448" r="5" fill="#f97316" opacity="0.9"/>
+                            <circle cx="872" cy="448" r="2.5" fill="#fff" opacity="0.9"/>
                         </g>
                         
                         <!-- Particle 8 -->
                         <g class="data-particle-upload" style="animation-delay: 3.5s">
-                            <circle cx="278" cy="452" r="6" fill="#ec4899" opacity="0.9"/>
-                            <circle cx="278" cy="452" r="3" fill="#fff" opacity="0.9"/>
+                            <circle cx="878" cy="452" r="6" fill="#ec4899" opacity="0.9"/>
+                            <circle cx="878" cy="452" r="3" fill="#fff" opacity="0.9"/>
                         </g>
                     </g>
                     
                     <!-- Data flowing line (curved path) -->
-                    <path d="M 270,450 Q 350,300 470,100" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.3" stroke-dasharray="10,5">
+                    <path d="M 870,450 Q 900,300 950,100" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.3" stroke-dasharray="10,5">
                         <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite"/>
                     </path>
                     
-                    <!-- Cloud Database System (Top Right) -->
-                    <g id="cloud-system" transform="translate(750, 150)" class="cloud-pulse">
+                    <!-- Cloud Database System (Top Center-Right) -->
+                    <g id="cloud-system" transform="translate(950, 150)" class="cloud-pulse">
                         <!-- Cloud shape -->
                         <ellipse cx="0" cy="0" rx="80" ry="50" fill="#fff" opacity="0.95"/>
                         <circle cx="-50" cy="0" r="40" fill="#fff" opacity="0.95"/>
@@ -389,26 +389,26 @@ app.get('/', (c) => {
                     </g>
                     
                     <!-- Connection visualization -->
-                    <g transform="translate(750, 210)">
+                    <g transform="translate(950, 210)">
                         <text x="0" y="0" text-anchor="middle" fill="#fff" font-size="14" opacity="0.8">Data Management System</text>
                     </g>
                     
                     <!-- Additional decorative data icons around cloud -->
-                    <g transform="translate(650, 120)">
+                    <g transform="translate(850, 120)">
                         <circle cx="0" cy="0" r="15" fill="#3b82f6" opacity="0.6">
                             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
                         </circle>
                         <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">ML</text>
                     </g>
                     
-                    <g transform="translate(850, 120)">
+                    <g transform="translate(1050, 120)">
                         <circle cx="0" cy="0" r="15" fill="#10b981" opacity="0.6">
                             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite"/>
                         </circle>
                         <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">BI</text>
                     </g>
                     
-                    <g transform="translate(750, 80)">
+                    <g transform="translate(950, 80)">
                         <circle cx="0" cy="0" r="15" fill="#fbbf24" opacity="0.6">
                             <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
                         </circle>
@@ -416,7 +416,7 @@ app.get('/', (c) => {
                     </g>
                     
                     <!-- Ground line -->
-                    <line x1="150" y1="550" x2="300" y2="550" stroke="#fff" stroke-width="2" opacity="0.3"/>
+                    <line x1="750" y1="550" x2="900" y2="550" stroke="#fff" stroke-width="2" opacity="0.3"/>
                 </svg>
             </div>
             
