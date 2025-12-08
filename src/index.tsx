@@ -129,6 +129,90 @@ app.get('/', (c) => {
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
             }
+            
+            /* Background animation for contact section */
+            .contact-bg {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .contact-bg-animation {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0.15;
+                pointer-events: none;
+            }
+            
+            /* Data upload animation */
+            @keyframes dataUpload {
+                0% { 
+                    transform: translateY(0) translateX(0) scale(1);
+                    opacity: 0;
+                }
+                20% {
+                    opacity: 1;
+                }
+                80% {
+                    opacity: 1;
+                }
+                100% { 
+                    transform: translateY(-400px) translateX(200px) scale(0.5);
+                    opacity: 0;
+                }
+            }
+            
+            .data-particle-upload {
+                animation: dataUpload 4s ease-in-out infinite;
+            }
+            
+            /* Phone glow animation */
+            @keyframes phoneGlow {
+                0%, 100% { 
+                    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.6));
+                }
+                50% { 
+                    filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.9));
+                }
+            }
+            
+            .phone-glow {
+                animation: phoneGlow 2s ease-in-out infinite;
+            }
+            
+            /* Cloud pulse animation */
+            @keyframes cloudPulse {
+                0%, 100% { 
+                    transform: scale(1);
+                    opacity: 0.8;
+                }
+                50% { 
+                    transform: scale(1.05);
+                    opacity: 1;
+                }
+            }
+            
+            .cloud-pulse {
+                animation: cloudPulse 3s ease-in-out infinite;
+            }
+            
+            /* Wave animation for signal */
+            @keyframes waveExpand {
+                0% {
+                    r: 10;
+                    opacity: 0.8;
+                }
+                100% {
+                    r: 40;
+                    opacity: 0;
+                }
+            }
+            
+            .signal-wave {
+                animation: waveExpand 2s ease-out infinite;
+            }
         </style>
     </head>
     <body class="bg-gray-50">
@@ -574,8 +658,178 @@ app.get('/', (c) => {
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 gradient-bg text-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" class="py-20 gradient-bg text-white contact-bg">
+            <!-- Animated Background -->
+            <div class="contact-bg-animation">
+                <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+                    <!-- African Youth with Smartphone (Left Side) -->
+                    <g id="person-collecting-data" transform="translate(200, 400)">
+                        <!-- Person Body -->
+                        <ellipse cx="0" cy="60" rx="35" ry="45" fill="#8b5cf6" opacity="0.9"/>
+                        
+                        <!-- Person Head (African skin tone) -->
+                        <circle cx="0" cy="0" r="30" fill="#8d5524" opacity="0.95"/>
+                        
+                        <!-- Hair (African hairstyle) -->
+                        <path d="M -25,-5 Q -30,-15 -25,-25 Q -15,-30 0,-28 Q 15,-30 25,-25 Q 30,-15 25,-5 Z" fill="#1a1a1a" opacity="0.95"/>
+                        
+                        <!-- Eyes -->
+                        <circle cx="-10" cy="-3" r="3" fill="#fff"/>
+                        <circle cx="10" cy="-3" r="3" fill="#fff"/>
+                        <circle cx="-10" cy="-3" r="2" fill="#000"/>
+                        <circle cx="10" cy="-3" r="2" fill="#000"/>
+                        
+                        <!-- Smile -->
+                        <path d="M -10,8 Q 0,12 10,8" stroke="#000" stroke-width="2" fill="none" opacity="0.8"/>
+                        
+                        <!-- Arms -->
+                        <ellipse cx="-30" cy="45" rx="12" ry="35" fill="#8d5524" opacity="0.9" transform="rotate(-20 -30 45)"/>
+                        <ellipse cx="30" cy="45" rx="12" ry="35" fill="#8d5524" opacity="0.9" transform="rotate(20 30 45)"/>
+                        
+                        <!-- Legs -->
+                        <rect x="-20" y="95" width="15" height="50" rx="7" fill="#4c1d95" opacity="0.9"/>
+                        <rect x="5" y="95" width="15" height="50" rx="7" fill="#4c1d95" opacity="0.9"/>
+                        
+                        <!-- Smartphone in hand -->
+                        <g class="phone-glow" transform="translate(50, 30)">
+                            <rect x="0" y="0" width="40" height="70" rx="5" fill="#1e293b" opacity="0.95" stroke="#8b5cf6" stroke-width="2"/>
+                            <rect x="5" y="8" width="30" height="50" rx="2" fill="#3b82f6" opacity="0.9"/>
+                            
+                            <!-- Screen content - data icons -->
+                            <circle cx="20" cy="20" r="3" fill="#fff" opacity="0.9"/>
+                            <circle cx="20" cy="30" r="3" fill="#fff" opacity="0.9"/>
+                            <circle cx="20" cy="40" r="3" fill="#fff" opacity="0.9"/>
+                            <rect x="10" y="18" width="5" height="2" fill="#fff" opacity="0.7"/>
+                            <rect x="10" y="28" width="5" height="2" fill="#fff" opacity="0.7"/>
+                            <rect x="10" y="38" width="5" height="2" fill="#fff" opacity="0.7"/>
+                            
+                            <!-- Signal waves from phone -->
+                            <circle cx="20" cy="10" r="10" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6" class="signal-wave"/>
+                            <circle cx="20" cy="10" r="10" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6" class="signal-wave" style="animation-delay: 0.5s"/>
+                            <circle cx="20" cy="10" r="10" fill="none" stroke="#fbbf24" stroke-width="2" opacity="0.6" class="signal-wave" style="animation-delay: 1s"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Animated Data Particles flowing upward -->
+                    <g id="data-stream">
+                        <!-- Particle 1 -->
+                        <g class="data-particle-upload">
+                            <circle cx="270" cy="450" r="8" fill="#3b82f6" opacity="0.9"/>
+                            <circle cx="270" cy="450" r="4" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 2 -->
+                        <g class="data-particle-upload" style="animation-delay: 0.5s">
+                            <circle cx="280" cy="460" r="6" fill="#10b981" opacity="0.9"/>
+                            <circle cx="280" cy="460" r="3" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 3 -->
+                        <g class="data-particle-upload" style="animation-delay: 1s">
+                            <circle cx="260" cy="440" r="7" fill="#fbbf24" opacity="0.9"/>
+                            <circle cx="260" cy="440" r="3.5" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 4 -->
+                        <g class="data-particle-upload" style="animation-delay: 1.5s">
+                            <circle cx="275" cy="455" r="5" fill="#ef4444" opacity="0.9"/>
+                            <circle cx="275" cy="455" r="2.5" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 5 -->
+                        <g class="data-particle-upload" style="animation-delay: 2s">
+                            <circle cx="285" cy="445" r="6" fill="#8b5cf6" opacity="0.9"/>
+                            <circle cx="285" cy="445" r="3" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 6 -->
+                        <g class="data-particle-upload" style="animation-delay: 2.5s">
+                            <circle cx="265" cy="465" r="7" fill="#06b6d4" opacity="0.9"/>
+                            <circle cx="265" cy="465" r="3.5" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 7 -->
+                        <g class="data-particle-upload" style="animation-delay: 3s">
+                            <circle cx="272" cy="448" r="5" fill="#f97316" opacity="0.9"/>
+                            <circle cx="272" cy="448" r="2.5" fill="#fff" opacity="0.9"/>
+                        </g>
+                        
+                        <!-- Particle 8 -->
+                        <g class="data-particle-upload" style="animation-delay: 3.5s">
+                            <circle cx="278" cy="452" r="6" fill="#ec4899" opacity="0.9"/>
+                            <circle cx="278" cy="452" r="3" fill="#fff" opacity="0.9"/>
+                        </g>
+                    </g>
+                    
+                    <!-- Data flowing line (curved path) -->
+                    <path d="M 270,450 Q 350,300 470,100" stroke="#8b5cf6" stroke-width="3" fill="none" opacity="0.3" stroke-dasharray="10,5">
+                        <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite"/>
+                    </path>
+                    
+                    <!-- Cloud Database System (Top Right) -->
+                    <g id="cloud-system" transform="translate(750, 150)" class="cloud-pulse">
+                        <!-- Cloud shape -->
+                        <ellipse cx="0" cy="0" rx="80" ry="50" fill="#fff" opacity="0.95"/>
+                        <circle cx="-50" cy="0" r="40" fill="#fff" opacity="0.95"/>
+                        <circle cx="50" cy="0" r="40" fill="#fff" opacity="0.95"/>
+                        <circle cx="0" cy="-20" r="45" fill="#fff" opacity="0.95"/>
+                        
+                        <!-- Cloud icon/text -->
+                        <text x="0" y="5" text-anchor="middle" fill="#667eea" font-size="20" font-weight="bold">CLOUD</text>
+                        <text x="0" y="25" text-anchor="middle" fill="#8b5cf6" font-size="14" font-weight="bold">DATABASE</text>
+                        
+                        <!-- Database icon inside cloud -->
+                        <g transform="translate(0, -35)">
+                            <ellipse cx="0" cy="0" rx="25" ry="8" fill="#667eea" opacity="0.8"/>
+                            <rect x="-25" y="0" width="50" height="20" fill="#667eea" opacity="0.6"/>
+                            <ellipse cx="0" cy="20" rx="25" ry="8" fill="#667eea" opacity="0.8"/>
+                        </g>
+                        
+                        <!-- Data receiving indicators -->
+                        <circle cx="0" cy="60" r="5" fill="#10b981" opacity="0.9">
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="-15" cy="55" r="4" fill="#3b82f6" opacity="0.9">
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="15" cy="55" r="4" fill="#fbbf24" opacity="0.9">
+                            <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Connection visualization -->
+                    <g transform="translate(750, 210)">
+                        <text x="0" y="0" text-anchor="middle" fill="#fff" font-size="14" opacity="0.8">Data Management System</text>
+                    </g>
+                    
+                    <!-- Additional decorative data icons around cloud -->
+                    <g transform="translate(650, 120)">
+                        <circle cx="0" cy="0" r="15" fill="#3b82f6" opacity="0.6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">ML</text>
+                    </g>
+                    
+                    <g transform="translate(850, 120)">
+                        <circle cx="0" cy="0" r="15" fill="#10b981" opacity="0.6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">BI</text>
+                    </g>
+                    
+                    <g transform="translate(750, 80)">
+                        <circle cx="0" cy="0" r="15" fill="#fbbf24" opacity="0.6">
+                            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="0" y="5" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">API</text>
+                    </g>
+                    
+                    <!-- Ground line -->
+                    <line x1="150" y1="550" x2="300" y2="550" stroke="#fff" stroke-width="2" opacity="0.3"/>
+                </svg>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold mb-4">Let's Transform Your Data</h2>
                     <p class="text-xl text-gray-100">Get in touch to discuss your project requirements</p>
