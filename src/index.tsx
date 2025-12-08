@@ -490,32 +490,32 @@ app.get('/', (c) => {
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
                     <!-- Saye Katale -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/blcobDXn" alt="Saye Katale - Agriculture Marketplace" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/saye-katale.png" alt="Saye Katale - Agriculture Marketplace" class="h-20 w-auto object-contain">
                     </div>
                     
                     <!-- Hipe Mart Oils -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/PUD1yEFC" alt="Hipe Mart Oils - More Than Fuel" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/hipe-mart.png" alt="Hipe Mart Oils - More Than Fuel" class="h-20 w-auto object-contain">
                     </div>
                     
                     <!-- Heifer International Uganda -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/FcrkJt6Y" alt="Heifer International Uganda" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/heifer.png" alt="Heifer International Uganda" class="h-20 w-auto object-contain">
                     </div>
                     
                     <!-- Uganda Christian University -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/udtqrFMI" alt="Uganda Christian University" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/ucu.png" alt="Uganda Christian University" class="h-20 w-auto object-contain">
                     </div>
                     
                     <!-- Mukono Municipal Council -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/rRcId4C6" alt="Mukono Municipal Council" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/mukono.png" alt="Mukono Municipal Council" class="h-20 w-auto object-contain">
                     </div>
                     
                     <!-- Simpo Café -->
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
-                        <img src="https://www.genspark.ai/api/files/s/WR23vIUP" alt="Simpo Café" class="h-20 w-auto object-contain">
+                        <img src="/static/logos/simpo.png" alt="Simpo Café" class="h-20 w-auto object-contain">
                     </div>
                 </div>
                 
