@@ -14,7 +14,7 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://a6206e7a.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://9ecb6529.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Completed Features
@@ -30,7 +30,7 @@
    - MIS Database → Data Collection → ETL Pipeline → Data Warehouse → ML Models/Analytics → Power BI Dashboard
    - Animated data particles flowing through the pipeline
    - Pulsing nodes and connections
-4. ✅ **NEW: Contact Section Background Animation** 🌟
+4. ✅ **NEW: Hero Section Background Animation** 🌟
    - African youth collecting data on smartphone
    - Animated data particles flowing from phone to cloud
    - Cloud database system with pulsing effects
@@ -39,6 +39,7 @@
    - Data management system visualization
    - Multiple colored data particles (8 different particles)
    - Curved data flow path to cloud
+   - Positioned in hero section with DATA hub visualization
 5. ✅ Project portfolio with 4 featured case studies
 6. ✅ Contact form with backend API endpoint
 7. ✅ Responsive navigation with mobile menu
@@ -69,7 +70,7 @@
    - Pulsing glow effects on active nodes
    - Real-time data flow representation from MIS to Dashboard
    
-3. **Contact Section Background** 🌟 NEW:
+3. **Hero Section Background Animation** 🌟 NEW:
    - **African Youth Character**: Full SVG illustration with African skin tone, hairstyle, and clothing
    - **Smartphone Animation**: Glowing phone with data icons, signal waves emanating
    - **8 Data Particles**: Multi-colored particles (blue, green, yellow, red, purple, cyan, orange, pink)
