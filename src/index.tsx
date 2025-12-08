@@ -479,6 +479,59 @@ app.get('/', (c) => {
             </div>
         </section>
 
+        <!-- Trusted By Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Trusted By Leading Organizations</h2>
+                    <p class="text-lg text-gray-600">Delivering data excellence to clients across multiple sectors</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+                    <!-- Saye Katale -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/blcobDXn" alt="Saye Katale - Agriculture Marketplace" class="h-20 w-auto object-contain">
+                    </div>
+                    
+                    <!-- Hipe Mart Oils -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/PUD1yEFC" alt="Hipe Mart Oils - More Than Fuel" class="h-20 w-auto object-contain">
+                    </div>
+                    
+                    <!-- Heifer International Uganda -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/FcrkJt6Y" alt="Heifer International Uganda" class="h-20 w-auto object-contain">
+                    </div>
+                    
+                    <!-- Uganda Christian University -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/udtqrFMI" alt="Uganda Christian University" class="h-20 w-auto object-contain">
+                    </div>
+                    
+                    <!-- Mukono Municipal Council -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/rRcId4C6" alt="Mukono Municipal Council" class="h-20 w-auto object-contain">
+                    </div>
+                    
+                    <!-- Simpo Café -->
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition transform hover:scale-105">
+                        <img src="https://www.genspark.ai/api/files/s/WR23vIUP" alt="Simpo Café" class="h-20 w-auto object-contain">
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-gray-600">
+                        <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+                        Serving clients across <span class="font-semibold text-gray-900">Agriculture</span>, 
+                        <span class="font-semibold text-gray-900">Energy</span>, 
+                        <span class="font-semibold text-gray-900">Education</span>, 
+                        <span class="font-semibold text-gray-900">Government</span>, and 
+                        <span class="font-semibold text-gray-900">Hospitality</span> sectors
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
