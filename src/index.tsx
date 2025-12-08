@@ -16,17 +16,27 @@ app.post('/api/contact', async (c) => {
     const body = await c.req.json()
     const { name, email, company, service, message } = body
     
-    // In production, you would save this to a database or send an email
+    // Log submission details
     console.log('Contact form submission:', { name, email, company, service, message })
+    
+    // TODO: Integrate with email service (SendGrid, Mailgun, or Resend)
+    // For now, submissions are logged. To send emails:
+    // 1. Sign up for an email service (SendGrid recommended)
+    // 2. Add API key as Cloudflare secret: wrangler secret put SENDGRID_API_KEY
+    // 3. Use Fetch API to call SendGrid's API
+    // Example: https://docs.sendgrid.com/for-developers/sending-email/v3-mail-send-faq
+    
+    // Email would be sent to: drnamanya@gmail.com
+    // From: datacollectorslimited@gmail.com
     
     return c.json({ 
       success: true, 
-      message: 'Thank you for contacting us! We will get back to you soon.' 
+      message: 'Thank you for contacting us! We have received your message and will get back to you soon.' 
     })
   } catch (error) {
     return c.json({ 
       success: false, 
-      message: 'Failed to submit form. Please try again.' 
+      message: 'Failed to submit form. Please try again or contact us directly at drnamanya@gmail.com' 
     }, 400)
   }
 })
@@ -945,17 +955,28 @@ app.get('/', (c) => {
                             <div>
                                 <i class="fas fa-envelope text-3xl text-blue-600 mb-2"></i>
                                 <p class="font-semibold">Email</p>
-                                <p class="text-gray-600">info@datacollectors.com</p>
+                                <p class="text-gray-600">
+                                    <a href="mailto:datacollectorslimited@gmail.com" class="hover:text-blue-600 transition">datacollectorslimited@gmail.com</a><br>
+                                    <a href="mailto:drnamanya@gmail.com" class="hover:text-blue-600 transition">drnamanya@gmail.com</a>
+                                </p>
                             </div>
                             <div>
                                 <i class="fas fa-phone text-3xl text-blue-600 mb-2"></i>
-                                <p class="font-semibold">Phone</p>
-                                <p class="text-gray-600">+123 456 7890</p>
+                                <p class="font-semibold">Phone / WhatsApp</p>
+                                <p class="text-gray-600">
+                                    <a href="tel:+256701634653" class="hover:text-blue-600 transition">+256 701 634653</a><br>
+                                    <a href="https://wa.me/256701634653" target="_blank" class="hover:text-blue-600 transition inline-flex items-center">
+                                        <i class="fab fa-whatsapp mr-1"></i> WhatsApp
+                                    </a>
+                                </p>
                             </div>
                             <div>
                                 <i class="fas fa-map-marker-alt text-3xl text-blue-600 mb-2"></i>
-                                <p class="font-semibold">Location</p>
-                                <p class="text-gray-600">Your City, Country</p>
+                                <p class="font-semibold">Locations</p>
+                                <p class="text-gray-600">
+                                    Kampala • Jinja<br>
+                                    Gulu • Hoima
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -995,18 +1016,33 @@ app.get('/', (c) => {
                         </ul>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">Connect</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                        <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>
+                                <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                                <a href="mailto:datacollectorslimited@gmail.com" class="hover:text-white transition">datacollectorslimited@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone mr-2 text-blue-400"></i>
+                                <a href="tel:+256701634653" class="hover:text-white transition">+256 701 634653</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp mr-2 text-green-400"></i>
+                                <a href="https://wa.me/256701634653" target="_blank" class="hover:text-white transition">WhatsApp</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>
+                                <span>Kampala, Jinja, Gulu, Hoima</span>
+                            </li>
+                        </ul>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                 <i class="fab fa-linkedin"></i>
                             </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition text-2xl">
+                            <a href="#" class="text-gray-400 hover:text-white transition text-xl">
                                 <i class="fab fa-facebook"></i>
                             </a>
                         </div>
