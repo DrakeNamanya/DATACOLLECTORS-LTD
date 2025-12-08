@@ -14,7 +14,7 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://b40b1cbe.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://16108599.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Completed Features
@@ -105,6 +105,13 @@
 - `POST /api/contact` - Contact form submission
   - Body: `{ name, email, company, service, message }`
   - Returns: `{ success: true/false, message: string }`
+  - Note: Currently logs to console. See EMAIL_SETUP.md for email integration
+
+## Contact Information
+- **Email**: datacollectorslimited@gmail.com, drnamanya@gmail.com
+- **Phone/WhatsApp**: +256 701 634653
+- **Locations**: Kampala, Jinja, Gulu, Hoima
+- **Form Submissions**: Ready to integrate with SendGrid/Resend (see EMAIL_SETUP.md)
 
 ## Local Development
 ```bash
