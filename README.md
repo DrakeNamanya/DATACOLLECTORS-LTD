@@ -14,7 +14,7 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://9ecb6529.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://b0d7f1ad.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Completed Features
