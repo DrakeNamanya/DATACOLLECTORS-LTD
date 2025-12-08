@@ -14,7 +14,7 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://b0d7f1ad.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://da8de433.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Completed Features
@@ -40,11 +40,21 @@
    - Multiple colored data particles (8 different particles)
    - Curved data flow path to cloud
    - Positioned in hero section with DATA hub visualization
-5. ✅ Project portfolio with 4 featured case studies
-6. ✅ Contact form with backend API endpoint
-7. ✅ Responsive navigation with mobile menu
-8. ✅ Smooth scroll animations and hover effects
-9. ✅ Footer with social links and company info
+5. ✅ **NEW: Trusted By Section** 🌟
+   - 6 customer/client logos displayed
+   - Saye Katale (Agriculture Marketplace)
+   - Hipe Mart Oils (Energy Sector)
+   - Heifer International Uganda (Non-profit/Agriculture)
+   - Uganda Christian University (Education)
+   - Mukono Municipal Council (Government)
+   - Simpo Café (Hospitality)
+   - Hover effects with card elevation
+   - Multi-sector service indicator
+6. ✅ Project portfolio with 4 featured case studies
+7. ✅ Contact form with backend API endpoint
+8. ✅ Responsive navigation with mobile menu
+9. ✅ Smooth scroll animations and hover effects
+10. ✅ Footer with social links and company info
 
 ## Technology Stack
 - **Backend**: Hono (Cloudflare Workers)
