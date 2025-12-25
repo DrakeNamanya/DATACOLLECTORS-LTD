@@ -119,6 +119,59 @@ app.get('/', (c) => {
                 background-size: 600% 600%;
                 animation: gradient-shift 15s ease infinite;
             }
+            
+            /* Carousel Styles */
+            .carousel-container {
+                position: relative;
+            }
+            
+            .carousel-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transform: translateX(100%);
+                transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+            }
+            
+            .carousel-slide.active {
+                opacity: 1;
+                transform: translateX(0);
+                z-index: 10;
+            }
+            
+            .carousel-slide.exit {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            
+            .carousel-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
+            .carousel-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.5);
+                border: 2px solid white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .carousel-dot.active {
+                background: white;
+                width: 40px;
+                border-radius: 6px;
+            }
+            
+            .carousel-dot:hover {
+                background: rgba(255, 255, 255, 0.8);
+            }
         </style>
     </head>
     <body class="bg-white">
@@ -201,14 +254,78 @@ app.get('/', (c) => {
                     </div>
                 </div>
 
-                <!-- Hero Image Placeholder -->
-                <div class="mt-16">
-                    <div class="placeholder-section rounded-2xl">
-                        <div class="text-center">
-                            <i class="fas fa-image text-6xl text-gray-600 mb-4"></i>
-                            <p class="text-gray-400 text-xl font-semibold">HERO IMAGE PLACEHOLDER</p>
-                            <p class="text-gray-500 mt-2">Dashboard / Data Visualization Screenshot</p>
-                            <p class="text-gray-600 text-sm mt-1">Recommended: 1200x600px</p>
+                <!-- Dynamic Services Carousel -->
+                <div class="mt-16 relative">
+                    <div class="carousel-container relative overflow-hidden rounded-2xl shadow-2xl" style="height: 500px;">
+                        <!-- Carousel Slides -->
+                        <div class="carousel-slide active" data-index="0">
+                            <img src="/static/carousel/app-development.jpg" alt="We Develop Applications" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Develop Applications</h3>
+                                    <p class="text-xl text-gray-200">Building powerful mobile and web applications for your business</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide" data-index="1">
+                            <img src="/static/carousel/data-analysis.jpg" alt="We Analyze Data" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Analyze Data</h3>
+                                    <p class="text-xl text-gray-200">Transforming raw data into actionable business insights</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide" data-index="2">
+                            <img src="/static/carousel/data-collection.jpg" alt="Research Data Collectors" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Are Research Data Collectors</h3>
+                                    <p class="text-xl text-gray-200">Professional field data collection across Uganda and East Africa</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide" data-index="3">
+                            <img src="/static/carousel/machine-learning.jpg" alt="Machine Learning Models" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Design Machine Learning Models</h3>
+                                    <p class="text-xl text-gray-200">Custom AI solutions that drive innovation and efficiency</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide" data-index="4">
+                            <img src="/static/carousel/data-pipelines.jpg" alt="Data Pipelines" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Design Data Pipelines</h3>
+                                    <p class="text-xl text-gray-200">Scalable ETL solutions for enterprise data processing</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-slide" data-index="5">
+                            <img src="/static/carousel/consultancy.jpg" alt="Data Consultancy" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-end">
+                                <div class="p-12 text-white">
+                                    <h3 class="text-4xl md:text-5xl font-bold mb-3">We Are A Data Consultancy Company</h3>
+                                    <p class="text-xl text-gray-200">Strategic data solutions tailored to your business needs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Dots -->
+                        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+                            <button class="carousel-dot active" data-slide="0"></button>
+                            <button class="carousel-dot" data-slide="1"></button>
+                            <button class="carousel-dot" data-slide="2"></button>
+                            <button class="carousel-dot" data-slide="3"></button>
+                            <button class="carousel-dot" data-slide="4"></button>
+                            <button class="carousel-dot" data-slide="5"></button>
                         </div>
                     </div>
                 </div>
@@ -925,6 +1042,46 @@ app.get('/', (c) => {
                 });
             });
 
+            // Carousel functionality
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const totalSlides = slides.length;
+            
+            function showSlide(index) {
+                // Remove active class from all slides and dots
+                slides.forEach(slide => {
+                    slide.classList.remove('active', 'exit');
+                });
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Add exit class to current slide
+                if (slides[currentSlide]) {
+                    slides[currentSlide].classList.add('exit');
+                }
+                
+                // Update current slide
+                currentSlide = (index + totalSlides) % totalSlides;
+                
+                // Add active class to new slide and dot
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Auto-advance carousel every 5 seconds
+            setInterval(nextSlide, 5000);
+            
             // Contact form
             document.getElementById('contact-form').addEventListener('submit', async function(e) {
                 e.preventDefault();
