@@ -569,12 +569,8 @@ app.get('/', (c) => {
                                 Learn More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
-                        <div class="placeholder-section rounded-2xl">
-                            <div class="text-center">
-                                <i class="fas fa-seedling text-5xl text-gray-600 mb-4"></i>
-                                <p class="text-gray-400 text-lg font-semibold">AGRICULTURE SOLUTION IMAGE</p>
-                                <p class="text-gray-500 text-sm mt-2">Dashboard or field data collection photo</p>
-                            </div>
+                        <div class="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="/static/solutions/agriculture-solution.jpg" alt="Agriculture Data Collection - Field data monitoring and crop analytics" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -582,12 +578,8 @@ app.get('/', (c) => {
                 <!-- Solution 2 -->
                 <div class="mb-20">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="placeholder-section rounded-2xl order-2 md:order-1">
-                            <div class="text-center">
-                                <i class="fas fa-graduation-cap text-5xl text-gray-600 mb-4"></i>
-                                <p class="text-gray-400 text-lg font-semibold">EDUCATION SOLUTION IMAGE</p>
-                                <p class="text-gray-500 text-sm mt-2">Student analytics or learning dashboard</p>
-                            </div>
+                        <div class="rounded-2xl overflow-hidden shadow-2xl order-2 md:order-1">
+                            <img src="/static/solutions/education-solution.jpg" alt="Education Analytics - Student performance dashboards and learning insights" class="w-full h-full object-cover">
                         </div>
                         <div class="order-1 md:order-2">
                             <div class="text-purple-600 font-semibold mb-3">EDUCATION & TRAINING</div>
@@ -649,12 +641,8 @@ app.get('/', (c) => {
                                 Learn More <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
-                        <div class="placeholder-section rounded-2xl">
-                            <div class="text-center">
-                                <i class="fas fa-city text-5xl text-gray-600 mb-4"></i>
-                                <p class="text-gray-400 text-lg font-semibold">GOVERNMENT SOLUTION IMAGE</p>
-                                <p class="text-gray-500 text-sm mt-2">Municipal dashboard or civic data viz</p>
-                            </div>
+                        <div class="rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="/static/solutions/government-solution.jpg" alt="Government Solutions - Municipal dashboards and civic data visualization" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
