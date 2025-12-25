@@ -9,17 +9,26 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://fdf0cfd0.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://3b0a1845.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Design Features (SendGrid-Inspired SaaS Style)
-1. ✅ **Modern Hero Section**
+1. ✅ **Modern Hero Section with Dynamic Carousel** 🎬 NEW!
    - Bold headline: "Transform Data Into Intelligent Solutions"
    - Gradient purple to blue background
    - Prominent CTA buttons (primary + secondary)
-   - African youth data collection animation (right side)
-   - Animated data flow from smartphone to cloud
-   - DATA hub visualization with orbiting nodes
+   - **6-Slide Image Carousel** with left-to-right transitions:
+     * Slide 1: "We Develop Applications" - Mobile & web development
+     * Slide 2: "We Analyze Data" - Data analytics & insights
+     * Slide 3: "We Are Research Data Collectors" - Field data collection
+     * Slide 4: "We Design Machine Learning Models" - AI/ML solutions
+     * Slide 5: "We Design Data Pipelines" - ETL & data processing
+     * Slide 6: "We Are A Data Consultancy Company" - Strategic consulting
+   - Auto-advancing every 5 seconds
+   - Interactive navigation dots
+   - Smooth slide transitions with fade and slide effects
+   - Professional AI-generated images in brand colors
+   - Overlay text with gradient backgrounds
    - Professional, conversion-focused layout
 
 2. ✅ **Trust Indicators**
@@ -184,12 +193,21 @@ webapp/
 - **Design Style**: Modern SaaS (SendGrid-inspired)
 - **Local Status**: ✅ Active and running
 - **Production Status**: ✅ Deployed and live
-- **Last Updated**: 2024-12-10
+- **Last Updated**: 2024-12-25
 - **Cloudflare Project**: data-collectors-ltd
-- **Latest Deployment**: https://fdf0cfd0.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://3b0a1845.data-collectors-ltd.pages.dev
+
+## Latest Features
+- ✅ Dynamic 6-slide carousel with professional AI-generated images
+- ✅ Auto-advancing carousel (5-second intervals)
+- ✅ Left-to-right slide transitions with smooth animations
+- ✅ Interactive navigation dots for manual control
+- ✅ All images generated with brand colors (purple/blue)
+- ✅ Responsive design across all devices
 
 ## Notes
-- Black placeholder sections included for future photos
 - Contact form ready for SendGrid integration (see EMAIL_SETUP.md)
-- Original animations preserved in new modern design
+- All carousel images generated using Recraft-v3 AI model
+- Images stored locally in `/public/static/carousel/`
+- Carousel JavaScript uses vanilla JS (no dependencies)
 - Fully responsive and mobile-optimized
