@@ -172,6 +172,23 @@ app.get('/', (c) => {
             .carousel-dot:hover {
                 background: rgba(255, 255, 255, 0.8);
             }
+            
+            /* Logo slide-in animation */
+            @keyframes slideInFromLeft {
+                0% {
+                    transform: translateX(-100px);
+                    opacity: 0;
+                }
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            .logo-slide {
+                animation: slideInFromLeft 0.8s ease-out forwards;
+                opacity: 0;
+            }
         </style>
     </head>
     <body class="bg-white">
@@ -335,24 +352,27 @@ app.get('/', (c) => {
                 <p class="text-center text-gray-500 text-sm font-semibold uppercase tracking-wider mb-10">
                     Trusted by Leading Organizations
                 </p>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8 items-center justify-items-center">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0s;">
                         <img src="/static/logos/saye-katale.png" alt="Saye Katale" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.1s;">
                         <img src="/static/logos/hipe-mart.png" alt="Hipe Mart Oils" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.2s;">
                         <img src="/static/logos/heifer.png" alt="Heifer International" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.3s;">
                         <img src="/static/logos/ucu.png" alt="Uganda Christian University" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.4s;">
                         <img src="/static/logos/mukono.png" alt="Mukono Municipal Council" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
-                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition">
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.5s;">
                         <img src="/static/logos/simpo.png" alt="Simpo Café" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
+                    </div>
+                    <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition logo-slide" style="animation-delay: 0.6s;">
+                        <img src="/static/logos/apo-grain-millers.png" alt="APO Grain Millers" class="h-16 w-auto object-contain opacity-70 hover:opacity-100">
                     </div>
                 </div>
             </div>
