@@ -179,11 +179,8 @@ app.get('/', (c) => {
         <nav class="bg-white shadow-sm fixed w-full top-0 z-50 border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-20 items-center">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                            <i class="fas fa-database text-white text-xl"></i>
-                        </div>
-                        <span class="text-2xl font-bold text-gray-900">Data Collectors</span>
+                    <div class="flex items-center space-x-3">
+                        <img src="/static/data-collectors-logo.png" alt="Data Collectors Limited" class="h-12 w-auto">
                     </div>
                     <div class="hidden md:flex space-x-8 items-center">
                         <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
@@ -961,11 +958,8 @@ app.get('/', (c) => {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <div class="flex items-center space-x-2 mb-4">
-                            <div class="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                                <i class="fas fa-database text-white"></i>
-                            </div>
-                            <span class="text-xl font-bold">Data Collectors</span>
+                        <div class="mb-4">
+                            <img src="/static/data-collectors-logo.png" alt="Data Collectors Limited" class="h-16 w-auto mb-3">
                         </div>
                         <p class="text-gray-400">
                             Transforming data into intelligent solutions across Africa.
