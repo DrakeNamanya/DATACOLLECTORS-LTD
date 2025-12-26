@@ -9,7 +9,7 @@
 ## URLs
 - **Development (Sandbox)**: https://3000-ip706wumytw4paowvwgd3-b32ec7bb.sandbox.novita.ai
 - **Production (Cloudflare Pages)**: https://data-collectors-ltd.pages.dev
-- **Latest Deployment**: https://4ca36815.data-collectors-ltd.pages.dev
+- **Latest Deployment**: https://69ca8f41.data-collectors-ltd.pages.dev
 - **GitHub**: (Ready to push)
 
 ## Design Features (SendGrid-Inspired SaaS Style)
@@ -31,11 +31,20 @@
    - Overlay text with gradient backgrounds
    - Professional, conversion-focused layout
 
-2. ✅ **Trust Indicators**
+2. ✅ **Trust Indicators** (with Left-to-Right Slide Animation) 🎬
    - "Trusted By Leading Organizations" section
-   - 6 client logos: Saye Katale, Hipe Mart, Heifer International, UCU, Mukono Council, Simpo Café
-   - Clean grid layout with hover effects
-   - Multi-sector credibility (Agriculture, Energy, Education, Government, Hospitality)
+   - 7 client logos with staggered slide-in animation:
+     * Saye Katale (Agriculture)
+     * Hipe Mart Oils (Energy)
+     * Heifer International (Non-profit)
+     * Uganda Christian University (Education)
+     * Mukono Municipal Council (Government)
+     * Simpo Café (Hospitality)
+     * APO Grain Millers (Agriculture/Manufacturing) 🆕
+   - Smooth left-to-right entrance animation (0.8s duration)
+   - Each logo slides in with 0.1s delay creating wave effect
+   - Grayscale filter with color on hover
+   - Multi-sector credibility across 6 industries
 
 3. ✅ **Key Features Grid**
    - 6 feature cards with icons
@@ -90,17 +99,24 @@
 - **API Routes**: `/api/contact` for form submissions
 
 ## Key Animation Features
-1. **Hero Section**: 
+1. **Client Logo Animations** 🎬 NEW:
+   - Staggered left-to-right slide-in effect
+   - 7 logos animate sequentially with 0.1s delays
+   - 0.8s smooth entrance animation per logo
+   - Creates professional wave effect on page load
+   - Grayscale to color transition on hover
+
+2. **Hero Section**: 
    - Floating animation on SVG data hub
    - Gradient text effects
    - Slide-in animations from left and right
    
-2. **Data Pipeline Visualization**:
+3. **Data Pipeline Visualization**:
    - Animated data particles moving through pipeline stages
    - Pulsing glow effects on active nodes
    - Real-time data flow representation from MIS to Dashboard
    
-3. **Hero Section Background Animation** 🌟 NEW:
+4. **Hero Section Background Animation**:
    - **African Youth Character**: Full SVG illustration with African skin tone, hairstyle, and clothing
    - **Smartphone Animation**: Glowing phone with data icons, signal waves emanating
    - **8 Data Particles**: Multi-colored particles (blue, green, yellow, red, purple, cyan, orange, pink)
@@ -111,12 +127,12 @@
    - **Orbiting Service Icons**: ML, BI, and API icons rotating around cloud
    - **15% Opacity**: Subtle background effect that doesn't overwhelm the form
    
-4. **Service Cards**:
+5. **Service Cards**:
    - Hover lift effect with shadow
    - Color-coded for different services
    - Icon animations
    
-5. **Scroll Animations**:
+6. **Scroll Animations**:
    - Elements fade in and slide up on scroll
    - Intersection Observer for performance
 
@@ -206,7 +222,9 @@ webapp/
 - **Latest Deployment**: https://4ca36815.data-collectors-ltd.pages.dev
 
 ## Latest Features
-- ✅ **Official Data Collectors Logo** in navigation and footer 🆕
+- ✅ **APO Grain Millers Logo** added to trusted clients with slide animation 🆕
+- ✅ **Left-to-Right Logo Animations** - All 7 client logos slide in sequentially
+- ✅ **Official Data Collectors Logo** in navigation and footer
 - ✅ Dynamic 6-slide carousel with professional AI-generated images
 - ✅ Auto-advancing carousel (5-second intervals)
 - ✅ Left-to-right slide transitions with smooth animations
@@ -224,7 +242,9 @@ webapp/
 - Logo file: `/public/static/data-collectors-logo.png` (63 KB)
 - Carousel images stored in `/public/static/carousel/` (6 images)
 - Solution images stored in `/public/static/solutions/` (3 images)
+- Client logos stored in `/public/static/logos/` (7 logos with slide animations)
 - Carousel JavaScript uses vanilla JS (no dependencies)
-- Total of 9 professional AI-generated images + 1 official logo
+- Logo animations use CSS keyframes (no JavaScript required)
+- Total of 9 professional AI-generated images + 1 official logo + 7 client logos
 - All images optimized and stored locally
 - Fully responsive and mobile-optimized
