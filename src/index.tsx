@@ -193,18 +193,18 @@ app.get('/', (c) => {
     </head>
     <body class="bg-white">
         <!-- Navigation -->
-        <nav class="bg-white shadow-sm fixed w-full top-0 z-50 border-b border-gray-100">
+        <nav class="bg-white fixed w-full top-0 z-50" style="box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-20 items-center">
                     <div class="flex items-center space-x-3">
                         <img src="/static/data-collectors-logo.png" alt="Data Collectors Limited" class="h-12 w-auto">
                     </div>
                     <div class="hidden md:flex space-x-8 items-center">
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
-                        <a href="#solutions" class="text-gray-700 hover:text-blue-600 font-medium transition">Solutions</a>
-                        <a href="#clients" class="text-gray-700 hover:text-blue-600 font-medium transition">Clients</a>
-                        <a href="#pricing" class="text-gray-700 hover:text-blue-600 font-medium transition">Pricing</a>
-                        <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-lg font-semibold">
+                        <a href="#services" class="text-gray-600 hover:text-blue-700 font-medium transition">Services</a>
+                        <a href="#solutions" class="text-gray-600 hover:text-blue-700 font-medium transition">Solutions</a>
+                        <a href="#clients" class="text-gray-600 hover:text-blue-700 font-medium transition">Clients</a>
+                        <a href="#pricing" class="text-gray-600 hover:text-blue-700 font-medium transition">Pricing</a>
+                        <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm">
                             Get Started
                         </a>
                     </div>
@@ -213,6 +213,8 @@ app.get('/', (c) => {
                     </button>
                 </div>
             </div>
+            <!-- Gradient accent line -->
+            <div style="height: 3px; background: linear-gradient(90deg, #1e40af 0%, #7c3aed 50%, #a855f7 100%);"></div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
                 <div class="px-4 pt-2 pb-3 space-y-1">
