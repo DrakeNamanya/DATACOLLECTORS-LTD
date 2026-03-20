@@ -21,7 +21,7 @@ app.use('/static/*', serveStatic({ root: './public' }))
 const APK_INFO = {
   name: 'Saye Katale',
   version: '1.0.0',
-  size: '60.4 MB',
+  size: '56.1 MB',
   filename: 'saye-katale.apk',
   description: 'Agricultural marketplace connecting farmers and buyers across Uganda',
   updated: '2026-03-20',
@@ -948,7 +948,7 @@ app.get('/', (c) => {
                                         <div class="text-xs text-gray-500">Downloads</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-3 border border-gray-100">
-                                        <div class="text-lg font-bold text-gray-900">60.4 MB</div>
+                                        <div class="text-lg font-bold text-gray-900">56.1 MB</div>
                                         <div class="text-xs text-gray-500">Size</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-3 border border-gray-100">
