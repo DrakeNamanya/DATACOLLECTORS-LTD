@@ -25,6 +25,7 @@ const APK_INFO = {
   filename: 'saye-katale.apk',
   description: 'Agricultural marketplace connecting farmers and buyers across Uganda',
   updated: '2026-03-20',
+  downloadUrl: 'https://github.com/DrakeNamanya/DATACOLLECTORS-LTD/releases/download/v1.0.0/SAYE.KATALE.apk',
 }
 
 // API: Get download stats
@@ -59,7 +60,7 @@ app.get('/download', async (c) => {
     const current = parseInt(await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0')
     await c.env.DOWNLOADS_KV?.put('saye-katale-downloads', (current + 1).toString())
   } catch {}
-  return c.redirect('/static/apps/saye-katale.apk')
+  return c.redirect(APK_INFO.downloadUrl)
 })
 
 // Short link: /dl → alias for /download
@@ -68,7 +69,7 @@ app.get('/dl', async (c) => {
     const current = parseInt(await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0')
     await c.env.DOWNLOADS_KV?.put('saye-katale-downloads', (current + 1).toString())
   } catch {}
-  return c.redirect('/static/apps/saye-katale.apk')
+  return c.redirect(APK_INFO.downloadUrl)
 })
 
 // Contact form API endpoint
@@ -1250,7 +1251,7 @@ app.get('/', (c) => {
                     await axios.post('/api/downloads/track');
                     loadDownloadCount();
                 } catch {}
-                window.location.href = '/static/apps/saye-katale.apk';
+                window.location.href = '/download';
             }
             window.downloadAPK = downloadAPK;
 
