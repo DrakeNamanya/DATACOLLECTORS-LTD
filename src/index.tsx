@@ -2,13 +2,74 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { serveStatic } from 'hono/cloudflare-workers'
 
-const app = new Hono()
+type Bindings = {
+  DOWNLOADS_KV: KVNamespace;
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 
 // Enable CORS for API routes
 app.use('/api/*', cors())
 
 // Serve static files
 app.use('/static/*', serveStatic({ root: './public' }))
+
+// ==========================================
+// APK Download System
+// ==========================================
+
+const APK_INFO = {
+  name: 'Saye Katale',
+  version: '1.0.0',
+  size: '60.4 MB',
+  filename: 'saye-katale.apk',
+  description: 'Agricultural marketplace connecting farmers and buyers across Uganda',
+  updated: '2026-03-20',
+}
+
+// API: Get download stats
+app.get('/api/downloads/stats', async (c) => {
+  try {
+    const count = await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0'
+    return c.json({
+      success: true,
+      downloads: parseInt(count),
+      app: APK_INFO
+    })
+  } catch {
+    return c.json({ success: true, downloads: 0, app: APK_INFO })
+  }
+})
+
+// API: Increment download count
+app.post('/api/downloads/track', async (c) => {
+  try {
+    const current = parseInt(await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0')
+    const newCount = current + 1
+    await c.env.DOWNLOADS_KV?.put('saye-katale-downloads', newCount.toString())
+    return c.json({ success: true, downloads: newCount })
+  } catch {
+    return c.json({ success: true, downloads: 0 })
+  }
+})
+
+// Short link: /download → direct APK download (tracks count)
+app.get('/download', async (c) => {
+  try {
+    const current = parseInt(await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0')
+    await c.env.DOWNLOADS_KV?.put('saye-katale-downloads', (current + 1).toString())
+  } catch {}
+  return c.redirect('/static/apps/saye-katale.apk')
+})
+
+// Short link: /dl → alias for /download
+app.get('/dl', async (c) => {
+  try {
+    const current = parseInt(await c.env.DOWNLOADS_KV?.get('saye-katale-downloads') || '0')
+    await c.env.DOWNLOADS_KV?.put('saye-katale-downloads', (current + 1).toString())
+  } catch {}
+  return c.redirect('/static/apps/saye-katale.apk')
+})
 
 // Contact form API endpoint
 app.post('/api/contact', async (c) => {
@@ -204,6 +265,7 @@ app.get('/', (c) => {
                         <a href="#solutions" class="text-gray-600 hover:text-blue-700 font-medium transition">Solutions</a>
                         <a href="#clients" class="text-gray-600 hover:text-blue-700 font-medium transition">Clients</a>
                         <a href="#pricing" class="text-gray-600 hover:text-blue-700 font-medium transition">Pricing</a>
+                        <a href="#app-download" class="text-gray-600 hover:text-blue-700 font-medium transition">Apps</a>
                         <a href="#contact" class="btn-primary text-white px-6 py-2.5 rounded-full font-semibold text-sm">
                             Get Started
                         </a>
@@ -222,6 +284,7 @@ app.get('/', (c) => {
                     <a href="#solutions" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Solutions</a>
                     <a href="#clients" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Clients</a>
                     <a href="#pricing" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Pricing</a>
+                    <a href="#app-download" class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded">Apps</a>
                     <a href="#contact" class="block px-3 py-2 bg-blue-600 text-white rounded">Get Started</a>
                 </div>
             </div>
@@ -843,6 +906,86 @@ app.get('/', (c) => {
             </div>
         </section>
 
+        <!-- App Download Section -->
+        <section class="py-20 bg-white" id="app-download">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Our Apps
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Download our mobile applications built for African enterprises
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-gradient-to-br from-green-50 via-white to-blue-50 rounded-3xl border border-gray-200 p-8 md:p-12 shadow-lg">
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <!-- App Info -->
+                            <div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-16 h-16 rounded-2xl bg-green-600 flex items-center justify-center shadow-lg">
+                                        <i class="fas fa-store text-white text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-900">Saye Katale</h3>
+                                        <span class="text-sm text-gray-500">Version 1.0.0</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-6 leading-relaxed">
+                                    Agricultural marketplace connecting farmers and buyers across Uganda. 
+                                    Browse products, compare prices, and connect directly with sellers.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full font-medium">Agriculture</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full font-medium">Marketplace</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full font-medium">Android</span>
+                                </div>
+                                <div class="grid grid-cols-3 gap-4 text-center mb-6">
+                                    <div class="bg-white rounded-xl p-3 border border-gray-100">
+                                        <div class="text-lg font-bold text-gray-900" id="download-count">--</div>
+                                        <div class="text-xs text-gray-500">Downloads</div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-3 border border-gray-100">
+                                        <div class="text-lg font-bold text-gray-900">60.4 MB</div>
+                                        <div class="text-xs text-gray-500">Size</div>
+                                    </div>
+                                    <div class="bg-white rounded-xl p-3 border border-gray-100">
+                                        <div class="text-lg font-bold text-gray-900">v1.0.0</div>
+                                        <div class="text-xs text-gray-500">Latest</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Download Actions -->
+                            <div class="flex flex-col items-center">
+                                <div class="w-40 h-40 mb-6 bg-white rounded-3xl shadow-xl flex items-center justify-center border border-gray-100">
+                                    <div class="text-center">
+                                        <i class="fab fa-android text-green-500 text-6xl mb-2"></i>
+                                        <div class="text-xs text-gray-400 font-medium">ANDROID APK</div>
+                                    </div>
+                                </div>
+                                <button onclick="downloadAPK()" 
+                                    class="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition transform hover:scale-105 shadow-lg mb-3">
+                                    <i class="fas fa-download mr-2"></i> Download APK
+                                </button>
+                                <button onclick="copyShareLink()" 
+                                    class="w-full bg-white border-2 border-gray-200 text-gray-700 px-8 py-3 rounded-xl font-medium hover:border-blue-400 hover:text-blue-600 transition">
+                                    <i class="fas fa-share-alt mr-2"></i> Copy Share Link
+                                </button>
+                                <div id="share-toast" class="hidden mt-3 text-sm text-green-600 font-medium">
+                                    <i class="fas fa-check-circle mr-1"></i> Link copied!
+                                </div>
+                                <p class="text-xs text-gray-400 mt-4 text-center">
+                                    Share link: <code class="bg-gray-100 px-2 py-0.5 rounded text-gray-600">data-collectors-ltd.pages.dev/dl</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="py-20 animated-gradient">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -1086,6 +1229,53 @@ app.get('/', (c) => {
             // Auto-advance carousel every 5 seconds
             setInterval(nextSlide, 5000);
             
+            // Load download count
+            async function loadDownloadCount() {
+                try {
+                    const res = await axios.get('/api/downloads/stats');
+                    if (res.data.success) {
+                        const count = res.data.downloads;
+                        document.getElementById('download-count').textContent = 
+                            count >= 1000 ? (count / 1000).toFixed(1) + 'K' : count.toString();
+                    }
+                } catch {
+                    document.getElementById('download-count').textContent = '0';
+                }
+            }
+            loadDownloadCount();
+
+            // Download APK with tracking
+            async function downloadAPK() {
+                try {
+                    await axios.post('/api/downloads/track');
+                    loadDownloadCount();
+                } catch {}
+                window.location.href = '/static/apps/saye-katale.apk';
+            }
+            window.downloadAPK = downloadAPK;
+
+            // Copy share link
+            function copyShareLink() {
+                const link = window.location.origin + '/dl';
+                navigator.clipboard.writeText(link).then(() => {
+                    const toast = document.getElementById('share-toast');
+                    toast.classList.remove('hidden');
+                    setTimeout(() => toast.classList.add('hidden'), 3000);
+                }).catch(() => {
+                    // Fallback for older browsers
+                    const input = document.createElement('input');
+                    input.value = link;
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(input);
+                    const toast = document.getElementById('share-toast');
+                    toast.classList.remove('hidden');
+                    setTimeout(() => toast.classList.add('hidden'), 3000);
+                });
+            }
+            window.copyShareLink = copyShareLink;
+
             // Contact form
             document.getElementById('contact-form').addEventListener('submit', async function(e) {
                 e.preventDefault();
