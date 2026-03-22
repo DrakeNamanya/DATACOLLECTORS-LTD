@@ -20,11 +20,11 @@ app.use('/static/*', serveStatic({ root: './public' }))
 
 const APK_INFO = {
   name: 'Saye Katale',
-  version: '1.0.0',
-  size: '56.1 MB',
+  version: '2.0.0',
+  size: '56.6 MB',
   filename: 'saye-katale.apk',
   description: 'Agricultural marketplace connecting farmers and buyers across Uganda',
-  updated: '2026-03-20',
+  updated: '2026-03-22',
   downloadUrl: 'https://github.com/DrakeNamanya/DATACOLLECTORS-LTD/releases/download/v1.0.0/SAYE.KATALE.apk',
 }
 
@@ -930,7 +930,7 @@ app.get('/', (c) => {
                                     </div>
                                     <div>
                                         <h3 class="text-2xl font-bold text-gray-900">Saye Katale</h3>
-                                        <span class="text-sm text-gray-500">Version 1.0.0</span>
+                                        <span class="text-sm text-gray-500">Version 2.0.0</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-600 mb-6 leading-relaxed">
@@ -948,11 +948,11 @@ app.get('/', (c) => {
                                         <div class="text-xs text-gray-500">Downloads</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-3 border border-gray-100">
-                                        <div class="text-lg font-bold text-gray-900">56.1 MB</div>
+                                        <div class="text-lg font-bold text-gray-900">56.6 MB</div>
                                         <div class="text-xs text-gray-500">Size</div>
                                     </div>
                                     <div class="bg-white rounded-xl p-3 border border-gray-100">
-                                        <div class="text-lg font-bold text-gray-900">v1.0.0</div>
+                                        <div class="text-lg font-bold text-gray-900">v2.0.0</div>
                                         <div class="text-xs text-gray-500">Latest</div>
                                     </div>
                                 </div>
